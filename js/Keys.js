@@ -67,8 +67,6 @@ export function loadKeyDownEvents(player, enemy) {
         enemy.isAttacking = true;
         enemy.lastKey = "Shift";
         break;
-      case "/":
-        console.log("Slash Pressed!"); // TODO: Add projectiles
     }
   });
 }

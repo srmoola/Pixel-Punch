@@ -69,33 +69,6 @@ class Fighter extends Sprite {
     }
   }
 
-  shootProjectile() {
-    if (this.health > 0 && !this.isAttacking) {
-      // Ensure fighter can shoot.
-      const projectileDirection = this.facingDirection || { x: 1, y: 0 }; // Use facingDirection if defined, otherwise default right.
-      const projectileVelocity = {
-        // Adjust speed and angle based on your game's logic.
-        x: projectileDirection.x * 10,
-        y: projectileDirection.y * 5,
-      };
-      const projectile = {
-        // Placeholder object for now.
-        position: this.getProjectileSpawnPosition(projectileDirection),
-        velocity: projectileVelocity,
-        width: 10, // Define placeholder width for collision detection.
-        height: 10, // Define placeholder height for collision detection.
-        damage: 10, // Adjust damage dealt by the projectile.
-        maxDistance: 500, // Adjust maximum distance the projectile can travel.
-      };
-      this.projectilesArray.push(projectile);
-      this.projectiles.forEach((projectile) => {
-        projectile.position.x += projectile.velocity.x;
-        projectile.position.y += projectile.velocity.y;
-        // Implement logic to check if the projectile traveled maxDistance and remove it from the array if needed.
-      });
-    }
-  }
-
   // Check if this fighter attackbox is hitting the enemy fighter.
   isHitting(enemyFighter) {
     return (

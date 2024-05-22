@@ -7,7 +7,6 @@ canvas.height = 576;
 const gravity = 1;
 
 class Fighter extends Sprite {
-  projectilesArray = [];
   constructor({
     name,
     position,
@@ -324,7 +323,7 @@ export const enemy = new Fighter({
     ArrowUp: {
       pressed: false,
     },
-    Shift: {
+    Control: {
       pressed: false,
     },
   },
